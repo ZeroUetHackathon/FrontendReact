@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { useRoutes } from "react-router-dom";
 import Loading from "../components/Loading/Loading";
 import Login from "../components/Login/Login";
+import AuthPage from "../pages/Auth/Auth";
 
 const Loadable = (Component) => (props) => {
   return (
@@ -16,23 +17,23 @@ function Router() {
     // auth routes
     {
       path: "/auth",
-      // element: {}
-      children: [
-        {
-          path: "login",
-          element: <LoginPage />,
-        },
-        {
-          path: "signup",
-          element: <SignupPage />,
-        },
-        {
-          path: "forgot-password",
-        },
-        {
-          path: "reset-password",
-        },
-      ],
+      element: <AuthPage />
+      // children: [
+      //   {
+      //     path: "login",
+      //     element: <LoginPage />,
+      //   },
+      //   {
+      //     path: "signup",
+      //     element: <SignupPage />,
+      //   },
+      //   {
+      //     path: "forgot-password",
+      //   },
+      //   {
+      //     path: "reset-password",
+      //   },
+      // ],
     },
 
     // main routes
